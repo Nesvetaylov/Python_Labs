@@ -11,6 +11,28 @@ sorted_letters = sorted(letter_count.keys())
 for letter in sorted_letters:
     print(f"{letter}{letter_count[letter]}")
 
+
+
+1input_string = "fhb5kbfыshfm"
+2letter_count = []
+3
+4for char in input_string:
+5    if 'a' <= char <= 'z':
+6        found = False
+7        for item in letter_count:
+8            if item[0] == char:
+9                item[1] += 1
+10                found = True
+11                break
+12        if not found:
+13            letter_count.append([char, 1])
+14
+15sorted_letters = sorted(letter_count)
+16
+17for item in sorted_letters:
+18    print(f"{item[0]}{item[1]}")
+
+
 '''
 1. letter_count = {} Создает пустой словарь letter_count, который будет использоваться для хранения количества каждого строчного английского символа.
 
