@@ -1,54 +1,32 @@
-letter_count = {}
-for char in "fhb5kbfыshfm":
+# Шаг 1: Ввод строки
+input_string = input("Введите строку: ")
+
+# Шаг 2: Инициализация списков
+letters = [] # Хранит уникальные буквы
+counts = [] # Счётчик повторений букв
+
+# Шаг 3: Фильтрация строчных английских букв и подсчет повторений
+for char in input_string:
     if 'a' <= char <= 'z':
-        if char in letter_count:
-            letter_count[char] += 1
-        else:
-            letter_count[char] = 1
+        if char in letters: # Увеличиваем счетчик
+            index = letters.index(char)
+            counts[index] += 1
+        else: # Добавляем букву
+            letters.append(char)
+            counts.append(1)
 
-sorted_letters = sorted(letter_count.keys())
+# Шаг 4: Сортировка букв и их счетчиков
+sorted_letters = sorted(letters)
+sorted_counts = [counts[letters.index(letter)] for letter in sorted_letters]
 
-for letter in sorted_letters:
-    print(f"{letter}{letter_count[letter]}")
+# Шаг 5: Вывод результата
+for letter, count in zip(sorted_letters, sorted_counts):
+    print(f"{letter}{count}")
 
+# ВВОД: fhb5kbfыshfm
 
-
-1input_string = "fhb5kbfыshfm"
-2letter_count = []
-3
-4for char in input_string:
-5    if 'a' <= char <= 'z':
-6        found = False
-7        for item in letter_count:
-8            if item[0] == char:
-9                item[1] += 1
-10                found = True
-11                break
-12        if not found:
-13            letter_count.append([char, 1])
-14
-15sorted_letters = sorted(letter_count)
-16
-17for item in sorted_letters:
-18    print(f"{item[0]}{item[1]}")
-
-
-'''
-1. letter_count = {} Создает пустой словарь letter_count, который будет использоваться для хранения количества каждого строчного английского символа.
-
-2. for char in "fhb5kbfыshfm": Начинает цикл for, который будет перебирать каждый символ в строке "fhb5kbfыshfm".
-
-3. if 'a' <= char <= 'z': Проверяет, является ли текущий символ char строчным английским символом (т.е., между 'a' и 'z' включительно). Если это так, то код внутри условия if будет выполнен.
-
-4. if char in letter_count: Проверяет, есть ли текущий символ char уже в словаре letter_count. Если это так, то код внутри условия if будет выполнен.
-
-5. letter_count[char] += 1 Если символ уже есть в словаре, увеличивает его счетчик на 1.
-
-6. else: letter_count[char] = 1 Если символа нет в словаре, добавляет его в словарь с счетчиком 1.
-
-7. sorted_letters = sorted(letter_count.keys()) Сортирует ключи словаря letter_count (т.е., строчные английские символы) в алфавитном порядке и хранит их в списке sorted_letters.
-
-8. for letter in sorted_letters: Начинает цикл for, который будет перебирать каждый символ в списке sorted_letters.
-
-9. print(f"{letter}{letter_count[letter]}") Выводит символ и его счетчик, разделенные пробелом. Используется форматирование строки с помощью f для создания вывода.
-'''
+# Фильтрация и подсчет: Проходим по каждому символу в строке. Если символ является строчной буквой:
+# Если буква уже есть в letters, находим её индекс и увеличиваем соответствующий счетчик в counts.
+# Если буквы нет, добавляем её в letters и устанавливаем счетчик в counts равным 1.
+# Сортировка: Сортируем letters, а затем создаем sorted_counts на основе отсортированных букв.
+# Вывод: Используем zip для вывода каждой буквы и её количества в нужном формате.
