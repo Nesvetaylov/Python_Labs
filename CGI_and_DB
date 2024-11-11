@@ -1,0 +1,43 @@
+import sqlite3
+# Работа с БД
+con = sqlite3.connect('db01.db')
+
+cur = con.cursor()
+# cur.execute('create table Tourism(id_room integer primary key, name_hotel varchar(30), cost_per_day integer,
+# id_renter integer, name_renter varchar(30))')
+
+insert_list = [
+    (2, 'Anapa_Hotel', 1800, 1, 'Ivan Vasylievich'),
+    (16, 'Gelendjik_Courort', 2500, 12, 'Olga Pavlova'),
+    (4, 'Anapa_Hotel', 1800, 2, 'Kirill Berlov')
+]
+sql = '''\
+insert  into Tourism(id_room, name_hotel, cost_per_day, id_renter, name_renter)
+values(?,?,?,?,?)
+'''
+
+
+cur.executemany(sql, insert_list)
+#print(cur.lastrowid)
+cur.execute('select * from Tourism')
+print(cur.fetchall())
+con.commit()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cur.close()
+con.close()
+
