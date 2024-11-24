@@ -27,3 +27,13 @@ def count_friendly_dominoes(file_input, file_output):
 
 # Пример использования функции
 count_friendly_dominoes('input.txt', 'output.txt')
+
+#Test inputs
+# 7
+# 1 2
+# 2 1
+# 3 3
+# 4 5
+# 2 1
+# 6 6
+# 6 6
