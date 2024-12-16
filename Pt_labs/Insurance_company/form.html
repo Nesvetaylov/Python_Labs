@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить клиента</title>
+</head>
+
+<body>
+    <h1>Добавить клиента</h1>
+    <form action="/cgi-bin/form.py" method="post">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <input type="submit" value="Добавить">
+    </form>
+</body>
+
+</html>
