@@ -1,0 +1,33 @@
+def display_data():
+    conn = sqlite3.connect('insurance_company.db')
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM clients")
+    clients = cursor.fetchall()
+
+    cursor.execute("SELECT * FROM policies")
+    policies = cursor.fetchall()
+
+    cursor.execute("SELECT * FROM claims")
+    claims = cursor.fetchall()
+
+    conn.close()
+
+    html = '<html><body>'
+    html += '<h1>Клиенты</h1><table border="1"><tr><th>ID</th><th>Имя</th><th>Email</th></tr>'
+    for client in clients:
+        html += f'<tr><td>{client[0]}</td><td>{client[1]}</td><td>{client[2]}</td></tr>'
+    html += '</table>'
+
+    html += '<h1>Полисы</h1><table border="1"><tr><th>ID</th><th>Клиент ID</th><th>Номер полиса</th><th>Тип полиса</th><th>Дата начала</th><th>Дата окончания</th></tr>'
+    for policy in policies:
+        html += f'<tr><td>{policy[0]}</td><td>{policy[1]}</td><td>{policy[2]}</td><td>{policy[3]}</td><td>{policy[4]}</td><td>{policy[5]}</td></tr>'
+    html += '</table>'
+
+    html += '<h1>Заявления</h1><table border="1"><tr><th>ID</th><th>Полис ID</th><th>Дата заявления</th><th>Сумма</th><th>Статус</th></tr>'
+    for claim in claims:
+        html += f'<tr><td>{claim[0]}</td><td>{claim[1]}</td><td>{claim[2]}</td><td>{claim[3]}</td><td>{claim[4]}</td></tr>'
+    html += '</table>'
+
+    html += '</body></html>'
+    return html

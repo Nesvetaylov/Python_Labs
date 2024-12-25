@@ -1,0 +1,128 @@
+<data>
+  <clients>
+    <client>
+      <id>1</id>
+      <name>Иван Иванов</name>
+      <email>ivan@example.com</email>
+    </client>
+    <client>
+      <id>2</id>
+      <name>Петр Петров</name>
+      <email>petr@example.com</email>
+    </client>
+    <client>
+      <id>3</id>
+      <name>Светлана Смирнова</name>
+      <email>svetlana@example.com</email>
+    </client>
+    <client>
+      <id>4</id>
+      <name>Алексей Кузнецов</name>
+      <email>alexey@example.com</email>
+    </client>
+    <client>
+      <id>5</id>
+      <name>Мария Васильева</name>
+      <email>maria@example.com</email>
+    </client>
+    <client>
+      <id>6</id>
+      <name>Андрей Павлов</name>
+      <email>pavlov@mail.ru</email>
+    </client>
+  </clients>
+  <policies>
+    <policy>
+      <id>1</id>
+      <client_id>1</client_id>
+      <policy_number>POL123</policy_number>
+      <policy_type>Автострахование</policy_type>
+      <start_date>2023-01-01</start_date>
+      <end_date>2024-01-01</end_date>
+    </policy>
+    <policy>
+      <id>2</id>
+      <client_id>2</client_id>
+      <policy_number>POL456</policy_number>
+      <policy_type>Медицинская страховка</policy_type>
+      <start_date>2023-02-01</start_date>
+      <end_date>2024-02-01</end_date>
+    </policy>
+    <policy>
+      <id>3</id>
+      <client_id>3</client_id>
+      <policy_number>POL789</policy_number>
+      <policy_type>Страхование жилья</policy_type>
+      <start_date>2023-03-01</start_date>
+      <end_date>2024-03-01</end_date>
+    </policy>
+    <policy>
+      <id>4</id>
+      <client_id>4</client_id>
+      <policy_number>POL101</policy_number>
+      <policy_type>Страхование жизни</policy_type>
+      <start_date>2023-04-01</start_date>
+      <end_date>2024-04-01</end_date>
+    </policy>
+    <policy>
+      <id>5</id>
+      <client_id>5</client_id>
+      <policy_number>POL102</policy_number>
+      <policy_type>Страхование путешествий</policy_type>
+      <start_date>2023-05-01</start_date>
+      <end_date>2024-05-01</end_date>
+    </policy>
+    <policy>
+      <id>6</id>
+      <client_id>6</client_id>
+      <policy_number>POL271</policy_number>
+      <policy_type>Страхование жизни</policy_type>
+      <start_date>2024-12-25</start_date>
+      <end_date>2025-01-25</end_date>
+    </policy>
+  </policies>
+  <claims>
+    <claim>
+      <id>1</id>
+      <policy_id>1</policy_id>
+      <claim_date>2023-03-01</claim_date>
+      <amount>10000.0</amount>
+      <status>Ожидает обработки</status>
+    </claim>
+    <claim>
+      <id>2</id>
+      <policy_id>2</policy_id>
+      <claim_date>2023-04-01</claim_date>
+      <amount>5000.0</amount>
+      <status>Одобрено</status>
+    </claim>
+    <claim>
+      <id>3</id>
+      <policy_id>3</policy_id>
+      <claim_date>2023-05-01</claim_date>
+      <amount>15000.0</amount>
+      <status>Ожидает обработки</status>
+    </claim>
+    <claim>
+      <id>4</id>
+      <policy_id>4</policy_id>
+      <claim_date>2023-06-01</claim_date>
+      <amount>20000.0</amount>
+      <status>Одобрено</status>
+    </claim>
+    <claim>
+      <id>5</id>
+      <policy_id>5</policy_id>
+      <claim_date>2023-07-01</claim_date>
+      <amount>25000.0</amount>
+      <status>Ожидает обработки</status>
+    </claim>
+    <claim>
+      <id>6</id>
+      <policy_id>6</policy_id>
+      <claim_date>2024-12-21</claim_date>
+      <amount>25000.0</amount>
+      <status>Ожидание</status>
+    </claim>
+  </claims>
+</data>
